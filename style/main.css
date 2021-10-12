@@ -1,0 +1,246 @@
+@font-face {
+  font-family: "Rubik" ;
+  src: url("../font/Rubik.ttf") ;
+}
+
+* {
+  box-sizing: border-box ;
+  font-family: "Rubik" ;
+  font-size: 16px ;
+  user-select: none ;
+}
+
+body {
+  margin: 0 ;
+  background-color: hsl(226, 43%, 10%) ;
+}
+
+.container {
+  width: 90% ;
+  margin: 20px auto ;
+  color: white ;
+}
+.container h1 {
+  font-size: 25px ;
+  margin: 20px auto ;
+  text-align: center ;
+}
+.choose {
+  display: flex ;
+  width: 110%  ;
+  margin-left: -5% ;
+  justify-content: space-around ;
+}
+.choose span {
+  width: 19% ;
+  color: #fff ;
+  padding: 2px ;
+  background-color: #42445A ;
+  border: 1px solid transparent ;
+  cursor: pointer ;
+  border-bottom-width: 4px ;
+  text-align: center ;
+  transition: .6s ;
+}
+.choose span.clicked {
+  box-shadow: 0 50px 25px 50px #fff inset ;
+  color: #42445A ;
+  border-color: hsl(43,84%,65%) ;
+}
+
+.employer {
+  margin: 40px 0 20px ;
+  height: 0px;
+  opacity: 0;
+  transition: .5s ;
+}
+.employer.active {
+  height: fit-content ;
+  opacity: 1 ;
+}
+.employer .info {
+  display: flex ;
+  align-items: center ;
+  border-radius: 15px ;
+  background-color: hsl(246, 80%, 60%) ;
+  padding: 20px ;
+  position: relative;
+  z-index: 5;
+}
+.employer .info img {
+  width: 25% ;
+  border-radius: 50% ;
+  border: 2px solid white ;
+}
+.employer .info p {
+  height: fit-content ;
+  margin: 0 ;
+  margin-left: 10px ;
+  color: whitesmoke ;
+  font-size: 27px ;
+}
+.employer .info p span {
+  margin-top: -10px ;
+  font-size: 14px ;
+  color: hsl(236, 100%, 87%) ;
+}
+.employer .time-frames {
+  display: flex ;
+  justify-content: space-evenly ;
+  background-color: hsl(235, 46%, 20%) ;
+  border-radius: 0 0 15px 15px ;
+  padding-top: 20px ;
+  margin-top: -20px ;
+  align-items: center ;
+  position: relative ;
+  z-index: 3 ;
+}
+.employer .time-frames span {
+  margin: 15px 0 ;
+  width: 20% ;
+  cursor: pointer ;
+  text-align: center ;
+  color: hsl(235, 45%, 61%) ;
+}
+.employer .time-frames span:hover ,
+.employer .time-frames span.click {
+  color: white ;
+}
+.card {
+  margin: 30px 0 ;
+  padding-top: 35px ;
+  border-radius: 15px ;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: 95% -10% ;
+}
+.work {
+  background-color: hsl(15, 100%, 70%);
+  background-image: url("../images/icon-work.svg");
+}
+.play {
+  background-color: hsl(195, 74%, 62%) ;
+  background-image: url("../images/icon-play.svg");
+}
+.study {
+  background-color: hsl(348, 100%, 68%) ;
+  background-image: url("../images/icon-study.svg");
+}
+.exercise {
+  background-color: hsl(145, 58%, 55%) ;
+  background-image: url("../images/icon-exercise.svg");
+  background-position: 95% -4% ;
+}
+.social {
+  background-color: hsl(264, 64%, 52%) ;
+  background-image: url("../images/icon-social.svg");
+}
+.self {
+  background-color: hsl(43, 84%, 65%) ;
+  background-image: url("../images/icon-self-care.svg");
+}
+.card > div {
+  padding: 20px ;
+  border-radius: 15px ;
+  background-color: hsl(235, 46%, 20%) ;
+  position: relative ;
+}
+.card > div:before {
+  content: "" ;
+  width: 100% ;
+  height: 100% ;
+  border-radius: 15px ;
+  position: absolute ;
+  top: 0 ;
+  left: 0 ;
+}
+.card > div:hover:before {
+  background-color: rgba(255,255,255,0.4) ;
+}
+.card > div div {
+  display: flex ;
+  align-items: center ;
+  justify-content: space-between ;
+}
+.card > div div:first-of-type {
+  margin-bottom: 15px ;
+}
+.card>div div:first-of-type span {
+  font-size: 18px ;
+}
+.card>div div:last-of-type > span {
+  font-size: 34px ;
+}
+.card > div div p {
+  margin: 0 ;
+  color: hsl(236, 100%, 87%) ;
+}
+.card > div div p ,
+.card > div div p span {
+  font-size: 15px;
+}
+.attribution {
+  text-align: center;
+}
+.attribution , .attribution a {
+  font-size: 11px ;
+  color: #fff ;
+}
+@media (min-width: 375px) {
+  .container {
+    width: 75% ;
+    display: flex ;
+    flex-wrap: wrap ;
+    align-items: flex-start ;
+    justify-content: space-between ;
+  }
+  .choose {
+    width: 100% ;
+    margin: 0 ;
+  }
+  .employer {
+    width: 23% ;
+    margin: 40px 0 0 ;
+  }
+  .employer .info {
+    padding: 10px ;
+    flex-direction: column ;
+    justify-content: space-evenly ;
+    height: 250px ;
+  }
+  .employer .info img {
+    width: 50% ;
+    margin-right: 50% ;
+  }
+  .employer .time-frames {
+    flex-direction: column ;
+    padding: 30px 20px 10px ;
+  }
+  .employer .time-frames span {
+    width: 100% ;
+    margin: 5px 0 ;
+    text-align: left ;
+  }
+  .card {
+    width: 32% ;
+    margin: 0 0 23px !important;
+  }
+  .card > div div:last-of-type {
+    flex-wrap: wrap ;
+  }
+  .card > div div p {
+    width: 100% ;
+  }
+  .card>div div p ,
+  .card > div div p span {
+    font-size: 12px ;
+  }
+  .sp {
+    width: 75% ;
+    display: flex ;
+    margin: 40px 0 0 ;
+    flex-wrap: wrap ;
+    align-items: stretch ;
+    justify-content: space-between ;
+  }
+}
